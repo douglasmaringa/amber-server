@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors')
-
+let port = process.env.PORT || 8080;
 //db connection 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.qwahu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{useNewUrlParser: true,useUnifiedTopology: true })
 let db = mongoose.connection;
@@ -23,4 +23,4 @@ const userRoute = require("./routes/user");
 app.use("/api/user", userRoute);
 
 //server now on and listening to server 
-app.listen(5000,()=> console.log("server started on port 5000"))
+app.listen(port,()=> console.log("server started on port 8080"))
